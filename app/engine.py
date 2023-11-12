@@ -1,3 +1,7 @@
+import math
+from typing import List, Set
+
+
 class Value:
     """stores a single scalar value and its gradient"""
 
@@ -46,6 +50,37 @@ class Value:
 
         return out
 
+    def tanh(self):
+        x = self.data
+        t = (math.exp(2 * x) - 1) / (math.exp(2 * x) + 1)
+        out = Value(t, (self,), "tanh")
+
+        def _backward():
+            self.grad += (1 - t**2) * out.grad
+
+        out._backward = _backward
+        return out
+
+    def exp(self):
+        x = self.data
+        out = Value(math.exp(x), (self,), "exp")
+
+        def _backward():
+            self.grad += out.data * out.grad
+
+        out._backward = _backward
+        return out
+
+    def log(self):
+        x = self.data
+        out = Value(math.log(x), (self,), "log")
+
+        def _backward():
+            self.grad += (1 / x) * out.grad
+
+        out._backward = _backward
+        return out
+
     def relu(self):
         out = Value(0 if self.data < 0 else self.data, (self,), "ReLU")
 
@@ -58,10 +93,10 @@ class Value:
 
     def backward(self):
         # topological order all of the children in the graph
-        topo = []
-        visited = set()
+        topo: List[Value] = []
+        visited: Set[Value] = set()
 
-        def build_topo(v):
+        def build_topo(v: Value):
             if v not in visited:
                 visited.add(v)
                 for child in v._prev:
