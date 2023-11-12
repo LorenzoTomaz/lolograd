@@ -13,12 +13,6 @@ class CrossEntropyLoss:
         probabilities = [x / total for x in exp_logits]
         return probabilities
 
-    def __get_target_index(self, target):
-        for i in range(len(target)):
-            if target[i]:
-                return i
-        return 0
-
     def __call__(self, logits: List[Value], target: Union[List[Value], List[int]]):
         # logits: list of Value objects from the last layer of the network
         # target: index of the correct class (assuming it's a single number)
