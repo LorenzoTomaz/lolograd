@@ -1,5 +1,5 @@
 import random
-from app.engine import Value
+from lolograd.engine import Value
 
 
 class Convolutional2DLayer:

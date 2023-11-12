@@ -1,5 +1,5 @@
 from typing import List, Union
-from app.engine import Value
+from lolograd.engine import Value
 
 
 class CrossEntropyLoss:

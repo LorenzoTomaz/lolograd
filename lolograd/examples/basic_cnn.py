@@ -1,6 +1,6 @@
-from app.layers.conv import Convolutional2DLayer
-from app.layers.dense import DenseLayer
-from app.layers.neuron import Neuron
+from lolograd.layers.conv import Convolutional2DLayer
+from lolograd.layers.dense import DenseLayer
+from lolograd.layers.neuron import Neuron
 
 
 class SimpleCNN:

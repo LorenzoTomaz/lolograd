@@ -1,6 +1,6 @@
 from typing import List
-from app.engine import Value
-from app.layers.neuron import Neuron
+from lolograd.engine import Value
+from lolograd.layers.neuron import Neuron
 
 
 class DenseLayer:

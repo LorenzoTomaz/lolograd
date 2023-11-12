@@ -1,6 +1,6 @@
 from typing import List
-from app.engine import Value
-from app.layers.dense import DenseLayer
+from lolograd.engine import Value
+from lolograd.layers.dense import DenseLayer
 
 
 class MLP:

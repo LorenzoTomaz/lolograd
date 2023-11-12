@@ -1,12 +1,12 @@
 import numpy as np
 from sklearn.datasets import load_iris, load_digits
-from app.engine import Value
-from app.examples.conv_mlp import ConvMLP
-from app.examples.mlp import MLP
-from app.layers.dense import DenseLayer
-from app.layers.neuron import Neuron
-from app.loss.cross_entropy import CrossEntropyLoss
-from app.utils.hot_encode import one_hot_encode
+from lolograd.engine import Value
+from lolograd.examples.conv_mlp import ConvMLP
+from lolograd.examples.mlp import MLP
+from lolograd.layers.dense import DenseLayer
+from lolograd.layers.neuron import Neuron
+from lolograd.loss.cross_entropy import CrossEntropyLoss
+from lolograd.utils.hot_encode import one_hot_encode
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import confusion_matrix, classification_report

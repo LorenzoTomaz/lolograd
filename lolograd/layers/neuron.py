@@ -1,6 +1,6 @@
 import random
 from typing import List
-from app.engine import Value
+from lolograd.engine import Value
 
 
 class Neuron:

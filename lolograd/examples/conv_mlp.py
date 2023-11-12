@@ -1,5 +1,5 @@
-from app.examples.mlp import MLP
-from app.layers.conv import Convolutional2DLayer
+from lolograd.examples.mlp import MLP
+from lolograd.layers.conv import Convolutional2DLayer
 
 
 class ConvMLP:

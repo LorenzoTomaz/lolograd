@@ -1,5 +1,5 @@
 import random
-from app.engine import Value
+from lolograd.engine import Value
 
 
 def generate_synthetic_data(grid_size, depth, num_samples, num_classes):
